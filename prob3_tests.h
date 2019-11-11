@@ -11,8 +11,6 @@ TEST_CASE("Empty list")
 
 TEST_CASE("Two subslists")
 {
-    //must not crash
-
     node<int> *l = tolist<int>({1, 2, 2, 3, 2, 2, 7});
     CHECK (dupsub(l,1) == true);
     CHECK (dupsub(l,2) == true);
@@ -22,8 +20,6 @@ TEST_CASE("Two subslists")
 
 TEST_CASE("With first")
 {
-    //must not crash
-
     node<int> *l = tolist<int>({2, 2, 3, 2, 2, 7});
     CHECK (dupsub(l,2) == true);
     CHECK (dupsub(l,3) == false);
@@ -31,8 +27,6 @@ TEST_CASE("With first")
 
 TEST_CASE("With last")
 {
-    //must not crash
-
     node<int> *l = tolist<int>({2, 2, 3, 2, 2});
     CHECK (dupsub(l,2) == true);
     CHECK (dupsub(l,3) == false);
@@ -40,8 +34,6 @@ TEST_CASE("With last")
 
 TEST_CASE("Interwined")
 {
-    //must not crash
-
     node<int> *l = tolist<int>({1, 1, 1, 1, 3, 4});
     CHECK (dupsub(l,2) == true);
     CHECK (dupsub(l,3) == true);

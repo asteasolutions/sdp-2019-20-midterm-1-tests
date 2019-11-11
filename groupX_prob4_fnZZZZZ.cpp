@@ -13,7 +13,24 @@
 ************************************************************************/
 
 template <typename T>
-void mirror(node<T>* l);
+void mirror(node<T>* l)
+{
+  if (l == nullptr)
+    return;
+
+  node<T> *last = l;
+
+  while (last->next != nullptr)
+  {
+    last = last->next;
+  }
+
+  while (l != last->next)
+  {
+    last->next = new node<T> (l->data, last->next);
+    l = l->next;
+  }
+}
 
 /***********************************************************************
  КРАЙ НА РЕШЕНИЕТО
@@ -25,7 +42,7 @@ void mirror(node<T>* l);
 /***********************************************************************
   РАЗКОМЕНТРИАЙТЕ СЛЕДВАЩИЯ РЕД, ЗА ДА ВКЛЮЧИТЕ ТЕСТОВЕТЕ
 ************************************************************************/
-//#include "prob4_tests.h"
+#include "prob4_tests.h"
 
 int main ()
 {
