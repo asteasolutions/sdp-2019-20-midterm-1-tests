@@ -14,7 +14,24 @@
  РЕШЕНИЕ:
 ************************************************************************/
 
-void removedups(node<int>* l);
+void removedups(node<int>* l)
+{
+  if (l == nullptr)
+    return;
+
+  node<int> *save;
+
+  while (l->next != nullptr)
+  {
+    while (l->data == l->next->data)
+    {
+      save = l->next->next;
+      delete l->next;
+      l->next = save;
+    }
+    l = l->next;
+  }
+}
 
 /***********************************************************************
  КРАЙ НА РЕШЕНИЕТО
