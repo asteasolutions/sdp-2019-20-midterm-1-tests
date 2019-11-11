@@ -31,7 +31,7 @@ TEST_CASE("With last")
     CHECK (dupsub(l,3) == false);
 }
 
-TEST_CASE("Interwined")
+TEST_CASE("Intertwined")
 {
     node<int> *l = tolist<int>({1, 1, 1, 1, 3, 4});
     CHECK (dupsub(l,2) == true);

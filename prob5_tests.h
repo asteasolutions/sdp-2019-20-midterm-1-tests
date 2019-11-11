@@ -14,7 +14,7 @@ TEST_CASE("Single element list, no deletion")
 {
     node<int> *l = tolist<int>({1});
     removeIdx (l);
-    CHECK(tovector(l) == std::vector<int>({1}));
+    CHECK(tovector(l) == std::vector<int>{1});
 }
 
 TEST_CASE("Single element list, WITH deletion")
@@ -35,7 +35,7 @@ TEST_CASE("Delete some")
 {
     node<int> *l = tolist<int>({11,6,12,4,3,13,1,0});
     removeIdx (l);
-    CHECK(tovector(l) == std::vector<int>({11,12,13}));
+    CHECK(tovector(l) == std::vector<int>{11,12,13});
 }
 
 #endif
