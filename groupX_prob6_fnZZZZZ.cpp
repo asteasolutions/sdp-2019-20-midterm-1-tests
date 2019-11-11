@@ -15,7 +15,60 @@
 ************************************************************************/
 
 template <typename T>
-void removesub(node<T>* first, node<T>* second);
+bool issublist (node<T>* sub, node<T>* list)
+{
+  while (sub != nullptr && list != nullptr && sub->data == list->data)
+  {
+    sub = sub->next;
+    list = list->next;
+  }
+
+  return sub == nullptr;
+}
+
+template <typename T>
+bool deleteprefix (node<T>* sub, node<T>*& list)
+//sub MUST be a prefix of list
+{
+  node<T> *save;
+  while (sub != nullptr)
+  {
+    sub = sub->next;
+    save = list->next;
+    delete list;
+    list = save;
+  }
+
+  return sub == nullptr;
+
+}
+
+template <typename T>
+void removesub(node<T>*& first, node<T>* second)
+{
+  
+  if (first == nullptr || second == nullptr)
+  {
+    return;
+  }
+  
+  node<T> *crr = first;
+
+  while (crr->next != nullptr)
+  {
+    if (issublist (second,crr->next))
+    {
+      deleteprefix (second,crr->next);
+    } else {
+      crr = crr->next;
+    }
+  }
+
+  if (issublist (second,first))
+  {
+    deleteprefix (second,first);
+  }
+}
 
 /***********************************************************************
  КРАЙ НА РЕШЕНИЕТО
@@ -27,7 +80,7 @@ void removesub(node<T>* first, node<T>* second);
 /***********************************************************************
   РАЗКОМЕНТРИАЙТЕ СЛЕДВАЩИЯ РЕД, ЗА ДА ВКЛЮЧИТЕ ТЕСТОВЕТЕ
 ************************************************************************/
-//#include "prob6_tests.h"
+#include "prob6_tests.h"
 
 int main ()
 {
