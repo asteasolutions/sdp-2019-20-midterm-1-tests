@@ -14,8 +14,26 @@ TEST_CASE("Remove inner")
     //must not crash
 
     node<int> *l = tolist<int>({1,2,2,2,2,3,7});
-    removegaps(l);
-    CHECK(tovector(l) == std::vector<int>({1,3,7}));
+    removedups(l);
+    CHECK(tovector(l) == std::vector<int>({1,2,3,7}));
+}
+
+TEST_CASE("Remove with first")
+{
+    //must not crash
+
+    node<int> *l = tolist<int>({2, 2, 2, 2, 3, 7});
+    removedups(l);
+    CHECK(tovector(l) == std::vector<int>({2, 3, 7}));
+}
+
+TEST_CASE("Remove with last")
+{
+    //must not crash
+
+    node<int> *l = tolist<int>({1, 2, 3, 7, 7, 7});
+    removedups(l);
+    CHECK(tovector(l) == std::vector<int>({1, 2, 3, 7}));
 }
 
 #endif

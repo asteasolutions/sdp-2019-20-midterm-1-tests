@@ -16,14 +16,11 @@
 
 void removedups(node<int>* l)
 {
-  if (l == nullptr)
-    return;
-
   node<int> *save;
 
-  while (l->next != nullptr)
+  while (l != nullptr && l->next != nullptr)
   {
-    while (l->data == l->next->data)
+    while (l->next != nullptr && l->data == l->next->data)
     {
       save = l->next->next;
       delete l->next;
@@ -43,7 +40,7 @@ void removedups(node<int>* l)
 /***********************************************************************
   РАЗКОМЕНТРИАЙТЕ СЛЕДВАЩИЯ РЕД, ЗА ДА ВКЛЮЧИТЕ ТЕСТОВЕТЕ
 ************************************************************************/
-//#include "prob2_tests.h"
+#include "prob2_tests.h"
 
 int main ()
 {
