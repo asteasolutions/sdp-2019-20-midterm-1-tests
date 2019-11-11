@@ -21,10 +21,10 @@ void removeIdx(node<int> *&l)
 
   int length = 0;
   node<int> *crr = l;
-  while (l != nullptr)
+  while (crr != nullptr)
   {
     ++length;
-    l = l->next;
+    crr = crr->next;
   }
   node<int> *save;
   int i;
@@ -58,7 +58,7 @@ void removeIdx(node<int> *&l)
 /***********************************************************************
   РАЗКОМЕНТРИАЙТЕ СЛЕДВАЩИЯ РЕД, ЗА ДА ВКЛЮЧИТЕ ТЕСТОВЕТЕ
 ************************************************************************/
-//#include "prob5_tests.h"
+#include "prob5_tests.h"
 
 int main ()
 {
