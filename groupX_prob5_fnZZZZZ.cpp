@@ -13,7 +13,40 @@
  РЕШЕНИЕ:
 ************************************************************************/
 
-void removeIdx(node<int> *&l);
+void removeIdx(node<int> *&l)
+{
+
+  if (l == nullptr)
+    return;
+
+  int length = 0;
+  node<int> *crr = l;
+  while (l != nullptr)
+  {
+    ++length;
+    l = l->next;
+  }
+  node<int> *save;
+  int i;
+  for (crr = l, i = length-2; i >= 0; --i)
+  {
+      if (crr->next->data == i)
+      {
+        save = crr->next->next;
+        delete crr->next;
+        crr->next = save;
+      } else {
+        crr = crr->next;
+      }
+  }
+
+  if (l->data == length-1)
+  {
+    save = l->next;
+    delete l;
+    l = save;
+  }
+}
 
 /***********************************************************************
  КРАЙ НА РЕШЕНИЕТО
