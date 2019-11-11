@@ -17,7 +17,6 @@ TEST_CASE("Two subslists")
     CHECK (dupsub(l,3) == false);
 }
 
-
 TEST_CASE("With first")
 {
     node<int> *l = tolist<int>({2, 2, 3, 2, 2, 7});
@@ -39,7 +38,5 @@ TEST_CASE("Interwined")
     CHECK (dupsub(l,3) == true);
     CHECK (dupsub(l,4) == false);
 }
-
-
 
 #endif

@@ -17,7 +17,6 @@ TEST_CASE("Empty sublist")
     removesub<int> (l, nullptr);
 }
 
-
 TEST_CASE("Delete at end")
 {
     node<int> *l = tolist<int>({1,2,3,4,5,6});
@@ -42,7 +41,6 @@ TEST_CASE("Delete inside")
     CHECK(tovector(l) == std::vector<int>({1,6}));
 }
 
-
 TEST_CASE("Delete at beginning")
 {
     node<int> *l = tolist<int>({1,2,3,4,5,6});
@@ -62,7 +60,5 @@ TEST_CASE("Delete multiple occurances")
     removesub (l, sub);
     CHECK(tovector(l) == std::vector<int>({1,4}));
 }
-
-
 
 #endif

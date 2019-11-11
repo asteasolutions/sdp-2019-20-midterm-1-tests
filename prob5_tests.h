@@ -38,5 +38,4 @@ TEST_CASE("Delete some")
     CHECK(tovector(l) == std::vector<int>({11,12,13}));
 }
 
-
 #endif
