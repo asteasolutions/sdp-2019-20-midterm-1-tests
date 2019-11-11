@@ -14,21 +14,7 @@
  РЕШЕНИЕ:
 ************************************************************************/
 
-void removedups(node<int>* l)
-{
-  node<int> *save;
-
-  while (l != nullptr && l->next != nullptr)
-  {
-    while (l->next != nullptr && l->data == l->next->data)
-    {
-      save = l->next->next;
-      delete l->next;
-      l->next = save;
-    }
-    l = l->next;
-  }
-}
+void removedups(node<int>* l);
 
 /***********************************************************************
  КРАЙ НА РЕШЕНИЕТО
@@ -40,7 +26,7 @@ void removedups(node<int>* l)
 /***********************************************************************
   РАЗКОМЕНТРИАЙТЕ СЛЕДВАЩИЯ РЕД, ЗА ДА ВКЛЮЧИТЕ ТЕСТОВЕТЕ
 ************************************************************************/
-#include "prob2_tests.h"
+//#include "prob2_tests.h"
 
 int main ()
 {

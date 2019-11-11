@@ -14,38 +14,7 @@
 ************************************************************************/
 
 template <typename T>
-bool commonprefix(node<T> *l1, node<T> *l2, unsigned k)
-{
-  while (l1 != nullptr && l2 != nullptr && l1->data == l2->data && k > 0)
-  {
-    l1 = l1->next;
-    l2 = l2->next;
-    k--;
-  }
-  return k == 0;
-}
-
-template <typename T>
-bool dupsub(node<T> *l, unsigned k)
-{
-  
-  node<T> *second = l;
-  
-  while (l != nullptr)
-  {
-    second = l->next;
-    while (second != nullptr)
-    {
-      if (commonprefix(l,second,k))
-      {
-        return true;
-      }
-      second = second->next;
-    }
-    l = l->next;
-  }
-  return false;
-}
+bool dupsub(node<T>* l, unsigned k);
 
 /***********************************************************************
  КРАЙ НА РЕШЕНИЕТО
@@ -57,7 +26,7 @@ bool dupsub(node<T> *l, unsigned k)
 /***********************************************************************
   РАЗКОМЕНТРИАЙТЕ СЛЕДВАЩИЯ РЕД, ЗА ДА ВКЛЮЧИТЕ ТЕСТОВЕТЕ
 ************************************************************************/
-#include "prob3_tests.h"
+//#include "prob3_tests.h"
 
 int main ()
 {
