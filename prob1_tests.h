@@ -1,5 +1,5 @@
-#ifndef __TESTS_PROBLEM1_CPP
-#define __TESTS_PROBLEM1_CPP
+#ifndef __PROB1_TESTS_H
+#define __PROB1_TESTS_H
 
 // TODO
 
