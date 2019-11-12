@@ -1,5 +1,5 @@
-#ifndef __PROB5_TESTS_H
-#define __PROB5_TESTS_H
+#ifndef __PROB2_TESTS_H
+#define __PROB2_TESTS_H
 
 #include "test_utils.hpp"
 
