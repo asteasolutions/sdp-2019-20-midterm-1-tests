@@ -1,6 +1,7 @@
 #ifndef __TEST_UTILS
 #define __TEST_UTILS
 
+#include <sstream>
 #include <vector>
 #include "node.h"
 
@@ -33,4 +34,23 @@ std::vector<T> tovector(node<T> *first)
     return res;
 }
 
+namespace doctest
+{
+template <typename T>
+struct StringMaker<std::vector<T>>
+{
+    static String convert(const std::vector<T>& v) {
+        std::ostringstream oss;
+
+		oss << "{ ";
+		for (auto el : v)
+		{
+			oss << el << " ";
+		}
+		oss << "}";
+
+		return oss.str().c_str();
+    }
+};
+}
 #endif
