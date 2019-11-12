@@ -53,7 +53,7 @@ TEST_CASE("Delete at beginning")
     CHECK(tovector(l) == std::vector<int>{5, 6});
 }
 
-TEST_CASE("Delete multiple occurances")
+TEST_CASE("Delete multiple occurrences")
 {
     node<int> *l = tolist<int>({1, 2, 3, 2, 3, 4, 2, 3});
     node<int> *sub = tolist<int>({2, 3});
