@@ -54,6 +54,11 @@ void removesub(node<T>*& first, node<T>* second)
   
   node<T> *crr = first;
 
+  if (issublist (second,first))
+  {
+    deleteprefix (second,first);
+  }
+  
   while (crr->next != nullptr)
   {
     if (issublist (second,crr->next))
@@ -62,11 +67,6 @@ void removesub(node<T>*& first, node<T>* second)
     } else {
       crr = crr->next;
     }
-  }
-
-  if (issublist (second,first))
-  {
-    deleteprefix (second,first);
   }
 }
 
